@@ -9,7 +9,7 @@ class MyHomePage extends StatelessWidget {
 
   final List<ItemHomepage> items = [
     ItemHomepage("All Product", Icons.newspaper),
-    ItemHomepage("Create Prodct", Icons.add),
+    ItemHomepage("Create Product", Icons.add),
     ItemHomepage("My Product", Icons.newspaper),
   ];
 
@@ -133,11 +133,24 @@ class ItemCard extends StatelessWidget {
 
   const ItemCard(this.item, {super.key}); 
 
+  Color _getColor(String name) {
+  switch (name) {
+    case "All Product":
+      return Colors.blue; // warna biru
+    case "My Product":
+      return Colors.green; // warna hijau
+    case "Create Product":
+      return Colors.red; // warna merah
+    default:
+      return Colors.grey; 
+  }
+}
+
+
   @override
   Widget build(BuildContext context) {
     return Material(
-      // Menentukan warna latar belakang dari tema aplikasi.
-      color: Theme.of(context).colorScheme.secondary,
+      color: _getColor(item.name), 
       // Membuat sudut kartu melengkung.
       borderRadius: BorderRadius.circular(12),
 
