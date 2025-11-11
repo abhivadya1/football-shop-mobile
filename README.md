@@ -1,4 +1,5 @@
-TUGAS 7
+<details>
+<Summary><b>Tugas 7</b></Summary>
 
 1.  Jelaskan apa itu widget tree pada Flutter dan bagaimana hubungan parent-child (induk-anak) bekerja antar widget.
    widget tree pada flutter adalah struktur hierarki yang menunjukkan bagaimana widget tersusun dalam suatu tampilan aplikasi. setiap widget bisa punya parent (induk) dan child (anak). parent mengatur posisi, ukuran, dan perilaku anaknya, sedangkan child berada di dalam parent dan mewarisi konteksnya. hubungan ini membentuk pohon widget, di mana perubahan pada satu widget bisa memengaruhi bagian lain di bawahnya.
@@ -27,3 +28,27 @@ di metode build, buildcontext dipakai untuk membangun tampilan widget berdasarka
 hot reload adalah fitur flutter yang memperbarui kode yang sedang dijalankan tanpa mengulang seluruh aplikasi. perubahan pada tampilan atau logika langsung muncul di layar tanpa kehilangan state aplikasi.
 sedangkan hot restart memulai ulang aplikasi dari awal, menghapus semua state yang sedang berjalan. hot restart digunakan jika perubahan menyangkut hal-hal yang tidak bisa diperbarui dengan hot reload, seperti perubahan pada variabel global atau struktur utama aplikasi.
 
+</details>
+
+<details>
+<Summary><b>Tugas 8</b></Summary>
+
+1. Jelaskan perbedaan antara Navigator.push() dan Navigator.pushReplacement() pada Flutter. Dalam kasus apa sebaiknya masing-masing digunakan pada aplikasi Football Shop kamu?
+   Perbedaan utama antara Navigator.push() dan Navigator.pushReplacement() adalah pada cara mereka mengatur halaman. Navigator.push() menambahkan halaman baru di atas halaman yang sedang aktif sehingga pengguna      masih bisa kembali ke halaman sebelumnya. Sedangkan Navigator.pushReplacement() mengganti halaman aktif dengan halaman baru dan menghapus halaman lama dari tumpukan, sehingga tidak bisa kembali lagi.
+
+   Dalam aplikasi Football Shop, Navigator.push() cocok digunakan saat membuka halaman form dari halaman utama agar pengguna bisa kembali ke Home. Sementara Navigator.pushReplacement() sebaiknya digunakan setelah    menyimpan data produk, supaya pengguna langsung kembali ke HomePage tanpa bisa kembali ke halaman form.
+
+2. Bagaimana kamu memanfaatkan hierarchy widget seperti Scaffold, AppBar, dan Drawer untuk membangun struktur halaman yang konsisten di seluruh aplikasi?
+   Saya memanfaatkan hierarchy widget seperti Scaffold, AppBar, dan Drawer untuk menjaga struktur halaman aplikasi agar konsisten dan mudah digunakan. Scaffold menjadi kerangka utama setiap halaman karena menyediakan struktur dasar seperti area untuk AppBar, body, dan Drawer. AppBar saya gunakan untuk menampilkan judul halaman dan navigasi agar pengguna tahu di mana mereka berada. Sedangkan Drawer digunakan untuk menampilkan menu navigasi ke halaman lain seperti Home, Tambah Produk, dan Lihat Produk. Dengan kombinasi ini, semua halaman di aplikasi Football Shop memiliki tampilan dan navigasi yang seragam, sehingga pengalaman pengguna menjadi lebih mudah dan konsisten.
+
+3. Dalam konteks desain antarmuka, apa kelebihan menggunakan layout widget seperti Padding, SingleChildScrollView, dan ListView saat menampilkan elemen-elemen form? Berikan contoh penggunaannya dari aplikasi kamu.
+   Dalam konteks desain antarmuka, penggunaan widget seperti Padding, SingleChildScrollView, dan ListView memberikan tampilan form yang lebih rapi, responsif, dan nyaman digunakan.
+
+Padding berfungsi untuk memberi jarak antar elemen agar tampilan tidak terlalu rapat dan lebih mudah dibaca. SingleChildScrollView memungkinkan seluruh isi form dapat digulir ke bawah, sehingga form tetap bisa diakses dengan nyaman pada layar kecil tanpa terpotong. Sementara ListView berguna saat jumlah elemen form cukup banyak dan dinamis, karena otomatis menyediakan fitur scroll dan efisien dalam menampilkan widget berulang.
+
+Contohnya dalam aplikasi Football Shop, saya menggunakan Padding pada setiap TextFormField agar tiap input seperti Nama Produk dan Harga Produk memiliki jarak yang rapi. Seluruh form dibungkus dengan SingleChildScrollView supaya pengguna tetap bisa menggulir halaman saat mengisi form di layar kecil. Dengan begitu, tampilan form menjadi lebih bersih, fleksibel, dan mudah digunakan di berbagai ukuran perangkat.
+
+4. Bagaimana kamu menyesuaikan warna tema agar aplikasi Football Shop memiliki identitas visual yang konsisten dengan brand toko?
+   Saya menyesuaikan warna tema aplikasi Football Shop dengan menentukan palet warna utama yang mencerminkan identitas visual brand toko. Warna utama yang digunakan adalah hijau.
+
+</details>
