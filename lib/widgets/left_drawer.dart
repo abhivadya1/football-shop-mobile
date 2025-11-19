@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:football_shop/screens/menu.dart';
 import 'package:football_shop/screens/newlist_form.dart';
+import 'package:football_shop/screens/product_entry_list.dart';
+
 // TODO: Impor halaman NewsFormPage jika sudah dibuat
 
 class LeftDrawer extends StatelessWidget {
@@ -41,6 +43,17 @@ class LeftDrawer extends StatelessWidget {
             ),
           ),
           // Bagian routing
+          ListTile(
+              leading: const Icon(Icons.add_reaction_rounded),
+              title: const Text('Product List'),
+              onTap: () {
+                  // Route to news list page
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const ProductEntryListPage()),
+                  );
+              },
+          ),
           ListTile(
             leading: const Icon(Icons.home_outlined),
             title: const Text('Home'),
