@@ -13,7 +13,7 @@ class MyHomePage extends StatelessWidget {
   final List<ItemHomepage> items = [
     ItemHomepage("All Product", Icons.newspaper),
     ItemHomepage("Create Product", Icons.add),
-    ItemHomepage("My Product", Icons.newspaper),
+    ItemHomepage("Logout", Icons.newspaper),
   ];
 
    @override

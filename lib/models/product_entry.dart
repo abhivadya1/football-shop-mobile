@@ -15,9 +15,9 @@ class ProductEntry {
   int itemViews;
   DateTime createdAt;
   bool isFeatured;
-
+  int price;
   int? userId;
-  String? username;   // <-- FIX: enum dihapus, pake nullable string
+  String username;   
 
   ProductEntry({
     required this.id,
@@ -28,8 +28,9 @@ class ProductEntry {
     required this.itemViews,
     required this.createdAt,
     required this.isFeatured,
+    required this.price,
+    required this.username,
     this.userId,
-    this.username,
   });
 
   factory ProductEntry.fromJson(Map<String, dynamic> json) => ProductEntry(
@@ -41,8 +42,9 @@ class ProductEntry {
         itemViews: json["item_views"] ?? 0,
         createdAt: DateTime.parse(json["created_at"]),
         isFeatured: json["is_featured"] ?? false,
-        userId: json["user_id"],                // null OK
-        username: json["username"],             // null OK
+        price: json["price"],
+        userId: json["user_id"],                
+        username: json["username"],             
       );
 
   Map<String, dynamic> toJson() => {
@@ -54,6 +56,7 @@ class ProductEntry {
         "item_views": itemViews,
         "created_at": createdAt.toIso8601String(),
         "is_featured": isFeatured,
+        "price": price,
         "user_id": userId,
         "username": username,
       };

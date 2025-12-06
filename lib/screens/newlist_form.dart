@@ -214,10 +214,11 @@ class _ProductFormPageState extends State<ProductFormPage> {
                                               "http://localhost:8000/create-flutter/",
                                               jsonEncode({
                                                 "name": _title,
-                                                "content": _content,
+                                                "description": _content, 
                                                 "thumbnail": _thumbnail,
                                                 "category": _category,
                                                 "is_featured": _isFeatured,
+                                                "price": _price, 
                                               }),
                                             );
                                             if (context.mounted) {

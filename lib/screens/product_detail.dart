@@ -26,7 +26,7 @@ class ProductDetailPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Thumbnail image
-            if (product.thumbnail.isNotEmpty)
+            if (product.thumbnail != null)
               Image.network(
                 'http://localhost:8000/proxy-image/?url=${Uri.encodeComponent(product.thumbnail)}',
                 width: double.infinity,
@@ -71,6 +71,17 @@ class ProductDetailPage extends StatelessWidget {
                     style: const TextStyle(
                       fontSize: 24.0,
                       fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+
+                  // Price 
+                  Text(
+                    'Rp${product.price.toString()}',
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.green.shade700
                     ),
                   ),
                   const SizedBox(height: 12),

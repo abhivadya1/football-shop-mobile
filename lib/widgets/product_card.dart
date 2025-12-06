@@ -3,6 +3,7 @@ import 'package:football_shop/screens/menu.dart'; // untuk akses ItemHomepage
 import 'package:football_shop/screens/newlist_form.dart';
 import 'package:football_shop/screens/product_entry_list.dart';
 import 'package:football_shop/screens/login.dart';
+import 'package:football_shop/screens/user_session.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:provider/provider.dart';
 
@@ -17,7 +18,7 @@ class ItemCard extends StatelessWidget {
   switch (name) {
     case "All Product":
       return Colors.blue; // warna biru
-    case "My Product":
+    case "Logout":
       return Colors.green; // warna hijau
     case "Create Product":
       return Colors.red; // warna merah
@@ -50,7 +51,7 @@ class ItemCard extends StatelessWidget {
                 context,
                 MaterialPageRoute(builder: (context) => const ProductFormPage()),
               );
-          } else if (item.name == "See Football Product") {
+          } else if (item.name == "All Product") {
               Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -68,6 +69,7 @@ class ItemCard extends StatelessWidget {
               if (context.mounted) {
                   if (response['status']) {
                       String uname = response["username"];
+                      UserSession.clear();
                       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                           content: Text("$message See you again, $uname."),
                       ));
